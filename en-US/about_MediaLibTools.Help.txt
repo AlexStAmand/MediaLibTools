@@ -1,0 +1,16 @@
+﻿TOPIC 
+	about_Set-MediaLanguage
+	
+SHORT DESCRIPTION	
+	Sets the language metadata flag on .mp4 & .m4v video files.
+	
+LONG DESCRIPTION
+	When a media files language is not properly set (or is 'undefined') then media servers (such as Plex) may report the language as "Unknown Audio" in the media details.
+
+	This cmdlet will recursivly search a given path for any media files with either a missing or incorrectly set language metadata flag and correct it.
+
+	The Powershell Module 'Get-Mediainfo' (GetMediaInfo.dll) is used to detrmine which files require modification. The cmdlet then uses mp4box.exe to set the language metadata tag on the video and/or audio tracks of each file. If the file only requires one track be modified then only that track will be processed.
+	
+NOTE
+	Written by Alex St. Amand - 2017
+	https://github.com/AlexStAmand/Set-MediaLanguage.psm1
